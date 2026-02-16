@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useTaskContext } from "../context/TaskContext";
 import { useModalContext } from "../context/ModalContext";
 import Button from "./ui/Button";
+import Input from "./ui/Input";
 
 const TaskForm = () => {
   const { addTask, editTask } = useTaskContext();
@@ -50,12 +51,7 @@ const TaskForm = () => {
         {editingTask ? "Edit Task" : "Add Task"}
       </h2>
 
-      <input
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="w-full rounded-lg bg-slate-700 px-4 py-3 outline-none focus:ring-2 focus:ring-indigo-500 text-white"
-        placeholder="Task title..."
-      />
+      <Input value={title} onChange={(e) => setTitle(e.target.value)} placeholder='Task title...' />
 
       <div className="flex justify-end gap-3">
         <Button variant="warning" type="button" onClick={closeModal}>
