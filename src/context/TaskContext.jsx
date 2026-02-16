@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
 import { taskReducer } from "./taskReducer";
 
-const TaskContext = createContext({
+export const TaskContext = createContext({
   tasks: [],
   addTask: (task) => {},
   editTask: (id, title) => {},
